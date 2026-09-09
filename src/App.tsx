@@ -11,7 +11,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white" style={{fontFamily: "'Inter', sans-serif"}}>
+    <div className="min-h-screen bg-gray-950 text-white overflow-x-hidden" style={{fontFamily: "'Inter', sans-serif"}}>
       {/* Navigation */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-gray-950/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,13 +51,13 @@ function App() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 sm:w-[600px] sm:h-[600px] bg-emerald-500/5 rounded-full blur-3xl"></div>
         </div>
         
-        <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)', backgroundSize: '50px 50px'}}></div>
+        <div className="absolute inset-0 opacity-[0.03] overflow-hidden" style={{backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)', backgroundSize: '50px 50px'}}></div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-1.5 mb-8">
@@ -116,7 +116,7 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 sm:py-28 relative">
+      <section id="about" className="py-20 sm:py-28 relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -143,7 +143,7 @@ function App() {
             </div>
             <div className="relative">
               <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-3xl p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl"></div>
+                <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-emerald-500/10 rounded-full blur-2xl"></div>
                 <div className="relative space-y-6">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center">
@@ -189,8 +189,8 @@ function App() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 sm:py-28 bg-gray-900/50 relative">
-        <div className="absolute inset-0 opacity-[0.02]" style={{backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)', backgroundSize: '30px 30px'}}></div>
+      <section id="skills" className="py-20 sm:py-28 bg-gray-900/50 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.02] overflow-hidden" style={{backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)', backgroundSize: '30px 30px'}}></div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-1.5 mb-6">
@@ -285,15 +285,15 @@ function App() {
           </div>
 
           <div className="mt-12 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 border border-emerald-500/20 rounded-2xl p-6 sm:p-8">
-            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+            <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6 text-center sm:text-left">
               <div className="w-16 h-16 bg-emerald-500/20 rounded-2xl flex items-center justify-center flex-shrink-0">
                 <i className="fas fa-certificate text-emerald-400 text-2xl"></i>
               </div>
-              <div>
+              <div className="flex-1 min-w-0">
                 <h3 className="text-lg font-bold text-white mb-1">Подтверждённые навыки на hh.ru</h3>
                 <p className="text-gray-400 text-sm">Все ключевые навыки пройдены через официальную систему верификации HeadHunter на продвинутом уровне</p>
               </div>
-              <div className="flex flex-wrap gap-2 sm:ml-auto">
+              <div className="flex flex-wrap justify-center sm:justify-start gap-2">
                 <span className="bg-emerald-500/20 text-emerald-300 text-xs px-3 py-1.5 rounded-full font-medium">SQL ✓</span>
                 <span className="bg-emerald-500/20 text-emerald-300 text-xs px-3 py-1.5 rounded-full font-medium">PostgreSQL ✓</span>
                 <span className="bg-emerald-500/20 text-emerald-300 text-xs px-3 py-1.5 rounded-full font-medium">API ✓</span>
@@ -305,7 +305,7 @@ function App() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 sm:py-28 relative">
+      <section id="experience" className="py-20 sm:py-28 relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-1.5 mb-6">
@@ -447,7 +447,7 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 sm:py-28 bg-gray-900/50 relative">
+      <section id="services" className="py-20 sm:py-28 bg-gray-900/50 relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-1.5 mb-6">
@@ -497,9 +497,9 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 sm:py-28 relative">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-3xl"></div>
+      <section id="contact" className="py-20 sm:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-[500px] sm:h-[500px] bg-emerald-500/5 rounded-full blur-3xl"></div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden">

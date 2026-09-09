@@ -11,34 +11,32 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white font-['Inter',sans-serif]">
+    <div className="min-h-screen bg-gray-950 text-white" style={{fontFamily: "'Inter', sans-serif"}}>
       {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-gray-950/95 backdrop-blur-md shadow-lg shadow-emerald-500/5' : 'bg-transparent'}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-gray-950/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <a href="#" className="text-xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+            <a href="#" className="text-xl font-bold" style={{background: 'linear-gradient(to right, #34d399, #22d3ee)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
               D.S. QA
             </a>
             
-            {/* Desktop menu */}
             <div className="hidden md:flex items-center gap-8">
               <a href="#about" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm font-medium">Обо мне</a>
               <a href="#skills" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm font-medium">Навыки</a>
               <a href="#experience" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm font-medium">Опыт</a>
               <a href="#services" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm font-medium">Услуги</a>
-              <a href="#contact" className="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2 rounded-full text-sm font-semibold transition-all hover:shadow-lg hover:shadow-emerald-500/25">
+              <a href="#contact" className="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2 rounded-full text-sm font-semibold transition-all hover:shadow-lg">
                 Связаться
               </a>
             </div>
 
-            {/* Mobile menu button */}
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-gray-300 hover:text-white">
               <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'} text-xl`}></i>
             </button>
           </div>
         </div>
 
-        {/* Mobile menu */} {isMenuOpen && (
+        {isMenuOpen && (
           <div className="md:hidden bg-gray-900/98 backdrop-blur-md border-t border-gray-800">
             <div className="px-4 py-4 space-y-3">
               <a href="#about" onClick={() => setIsMenuOpen(false)} className="block text-gray-300 hover:text-emerald-400 py-2">Обо мне</a>
@@ -53,14 +51,12 @@ function App() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background effects */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-3xl"></div>
         </div>
         
-        {/* Grid pattern */}
         <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)', backgroundSize: '50px 50px'}}></div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -72,7 +68,7 @@ function App() {
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-black leading-tight mb-6">
             <span className="text-white">Дмитрий Шаргер</span>
             <br />
-            <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+            <span style={{background: 'linear-gradient(to right, #34d399, #22d3ee, #34d399)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
               Full Stack QA Engineer
             </span>
           </h1>
@@ -84,7 +80,7 @@ function App() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <a href="#contact" className="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all hover:shadow-xl hover:shadow-emerald-500/25 hover:-translate-y-0.5">
+            <a href="#contact" className="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all hover:shadow-xl hover:-translate-y-0.5">
               <i className="fas fa-paper-plane mr-2"></i>
               Обсудить проект
             </a>
@@ -94,7 +90,6 @@ function App() {
             </a>
           </div>
 
-          {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
             <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-4 hover:border-emerald-500/30 transition-colors">
               <div className="text-2xl sm:text-3xl font-black text-emerald-400">7+</div>
@@ -115,7 +110,6 @@ function App() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <i className="fas fa-chevron-down text-emerald-400/50 text-xl"></i>
         </div>
@@ -211,7 +205,6 @@ function App() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Skill Card 1 */}
             <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-emerald-500/30 transition-all hover:-translate-y-1 group">
               <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <i className="fas fa-vial text-emerald-400 text-xl"></i>
@@ -225,7 +218,6 @@ function App() {
               </div>
             </div>
 
-            {/* Skill Card 2 */}
             <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-emerald-500/30 transition-all hover:-translate-y-1 group">
               <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <i className="fab fa-python text-cyan-400 text-xl"></i>
@@ -239,7 +231,6 @@ function App() {
               </div>
             </div>
 
-            {/* Skill Card 3 */}
             <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-emerald-500/30 transition-all hover:-translate-y-1 group">
               <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <i className="fas fa-plug text-emerald-400 text-xl"></i>
@@ -253,7 +244,6 @@ function App() {
               </div>
             </div>
 
-            {/* Skill Card 4 */}
             <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-emerald-500/30 transition-all hover:-translate-y-1 group">
               <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <i className="fas fa-database text-cyan-400 text-xl"></i>
@@ -267,7 +257,6 @@ function App() {
               </div>
             </div>
 
-            {/* Skill Card 5 */}
             <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-emerald-500/30 transition-all hover:-translate-y-1 group">
               <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <i className="fas fa-tasks text-emerald-400 text-xl"></i>
@@ -281,7 +270,6 @@ function App() {
               </div>
             </div>
 
-            {/* Skill Card 6 */}
             <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-emerald-500/30 transition-all hover:-translate-y-1 group">
               <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <i className="fas fa-code-branch text-cyan-400 text-xl"></i>
@@ -296,7 +284,6 @@ function App() {
             </div>
           </div>
 
-          {/* Verified Skills Badge */}
           <div className="mt-12 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 border border-emerald-500/20 rounded-2xl p-6 sm:p-8">
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
               <div className="w-16 h-16 bg-emerald-500/20 rounded-2xl flex items-center justify-center flex-shrink-0">
@@ -330,7 +317,6 @@ function App() {
           </div>
 
           <div className="space-y-8">
-            {/* Experience 1 */}
             <div className="relative bg-gray-900 border border-gray-800 rounded-2xl p-6 sm:p-8 hover:border-emerald-500/30 transition-colors">
               <div className="absolute top-6 right-6 sm:top-8 sm:right-8">
                 <span className="bg-emerald-500/10 text-emerald-400 text-xs sm:text-sm px-3 py-1.5 rounded-full font-medium">
@@ -375,7 +361,6 @@ function App() {
               </ul>
             </div>
 
-            {/* Experience 2 */}
             <div className="relative bg-gray-900 border border-gray-800 rounded-2xl p-6 sm:p-8 hover:border-emerald-500/30 transition-colors">
               <div className="absolute top-6 right-6 sm:top-8 sm:right-8">
                 <span className="bg-cyan-500/10 text-cyan-400 text-xs sm:text-sm px-3 py-1.5 rounded-full font-medium">
@@ -413,7 +398,6 @@ function App() {
             </div>
           </div>
 
-          {/* Certificates */}
           <div className="mt-16">
             <h3 className="text-2xl font-bold text-center mb-8">Сертификаты и <span className="text-emerald-400">обучение</span></h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -512,7 +496,7 @@ function App() {
         </div>
       </section>
 
-      {/* CTA / Contact Section */}
+      {/* Contact Section */}
       <section id="contact" className="py-20 sm:py-28 relative">
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-3xl"></div>
@@ -530,7 +514,7 @@ function App() {
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4 mb-8 max-w-lg mx-auto">
-              <a href="tel:+79181760994" className="flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-4 rounded-xl font-semibold transition-all hover:shadow-lg hover:shadow-emerald-500/25">
+              <a href="tel:+79181760994" className="flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-4 rounded-xl font-semibold transition-all hover:shadow-lg">
                 <i className="fas fa-phone"></i>
                 <span>Позвонить</span>
               </a>
@@ -549,17 +533,12 @@ function App() {
                 <i className="fas fa-envelope text-emerald-400"></i>
                 <a href="mailto:sharger-dima@yandex.ru" className="hover:text-white transition-colors">sharger-dima@yandex.ru</a>
               </div>
-              <div className="flex items-center gap-2">
-                <i className="fab fa-telegram text-emerald-400"></i>
-                <span>Telegram</span>
-              </div>
             </div>
           </div>
 
-          {/* Additional CTA */}
           <div className="mt-8 text-center">
             <p className="text-gray-500 text-sm mb-4">Также можно связаться через:</p>
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-4">
               <a href="https://krasnodar.hh.ru/resume/2825ee30ff062abd9f0039ed1f6e526c726350" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/20 text-red-400 hover:bg-red-500/20 px-4 py-2 rounded-full text-sm font-medium transition-all">
                 <i className="fas fa-briefcase"></i>
                 hh.ru резюме
